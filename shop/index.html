@@ -1,0 +1,56 @@
+<script>
+
+    const productNamePhone = "Samsung XXII"
+    const productPricePhone = 1000.50
+    
+    const productNameTV = "LG"
+    const productPriceTV = 1500.50
+
+    const productNameGame = "The Elder Scrolls"
+    const productPriceGame = 30.50
+ 
+    /* 
+        productNameTV + "\n" +
+        productNameGame + "\n" 
+
+        productPriceTV + "\n" +
+        productPriceGame + "\n" 
+    */
+
+    let q = +prompt(
+    "CATALOG of PHONES" + "\n" + "-------------------" + "\n" +
+    productNamePhone + "\n" +
+    productPricePhone + "\n" +
+     "-------------------" 
+    )
+    let w = +prompt(
+    "CATALOG of TVs" + "\n" + "-------------------" + "\n" +
+    productNameTV + "\n" +
+    productPriceTV + "\n" +
+     "-------------------" 
+    )
+    let e = +prompt(
+    "CATALOG of GAMES" + "\n" + "-------------------" + "\n" +
+    productNameGame + "\n" +
+    productPriceGame + "\n" +
+     "-------------------" 
+    )
+
+    // alert(typeof q)
+
+    let totalPhone = productPricePhone * q 
+    let totalTV = productPriceTV * w 
+    let totalGame = productPriceGame * e 
+    let total = totalPhone + totalTV + totalGame
+
+
+    alert(
+    "--------------------------------- \n" +
+    "Your order: \n" +
+    "'Samsung XXII' x " + q + " = " + totalPhone + "\n" +
+    "'LG' x " + w + " = " + totalTV + "\n" +
+    "'The Elder Scrolls' x " + e + " = " + totalGame + "\n" +
+    "Total cost: " + total + "\n" +
+    "---------------------------------" 
+    )
+</script>
