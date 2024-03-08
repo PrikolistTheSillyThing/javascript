@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTAURANT | JS</title>
+    <style> body {
+        background-color: #334;
+        color: white;
+        } 
+        ul {
+            list-style: none;
+        }
+        ul img {
+            width: 200px;
+        }
+        ul li {
+            border-bottom: 1px solid #666;
+        }
+     
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li>
+            <h2 id="item1_h2"></h2>
+            <img id="item1_img" src="" alt="">
+            <p id="item1_p"></p>
+            <button 
+                onclick="
+                    let quantity1 = +prompt('How many ?')
+                    let item1_cost = quantity1 * product1_price_amount
+                    total_cost_amount += item1_cost
+
+                    if ( quantity1 >= 5 ) {
+                        total_cost_amount -= product1_price_amount
+                    }
+
+                    order_summary.innerHTML = 'Order Total: ' + total_cost_amount + total_cost_currency
+                    cancel.innerHTML = 'CANCEL ORDER'
+                "
+            >ORDER</button>
+        </li>
+        <li>
+            <h2 id="item2_h2"></h2>
+            <img id="item2_img" src="" alt="">
+            <p id="item2_p"></p>
+            <button
+                onclick="
+                    let quantity2 = +prompt('How many ?')
+                    let item2_cost = quantity2 * product2_price_amount
+                    total_cost_amount += item2_cost
+
+                    order_summary.innerHTML = 'Order Total: ' + total_cost_amount + total_cost_currency
+                    cancel.innerHTML = 'CANCEL ORDER'
+                "
+            >ORDER</button>
+        </li>
+    </ul>
+    <div>
+        <input id="delivery_checkbox" type="checkbox" 
+            onclick="
+
+                if (delivery_checkbox.checked) {
+                   total_cost_amount += delivery_cost_amount
+                } else {
+                    total_cost_amount -= delivery_cost_amount
+                }
+                order_summary.innerHTML = 'Order Total: ' + total_cost_amount + total_cost_currency
+
+            "> with Delivery 
+    </div>
+    <div id="order_summary">
+
+    </div> 
+    <br>
+    <div>
+        <button id="cancel" 
+        onclick="
+            total_cost_amount = 0
+            order_summary.innerHTML = ''
+            cancel.innerHTML = ''
+        ">
+        </button>
+    </div>
+    
+
+
+    <script>
+        let total_cost_amount =  0
+        let total_cost_currency =  "MDL"
+
+        let delivery_cost_amount = 50 
+        let delivery_cost_currency = "MDL"
+
+        let product1_name = "Pizza"
+        let product1_img = "images/pizza.webp"
+        let product1_img_alt = "pizza"
+        let product1_price_amount = 100
+        let product1_price_currency = "MDL"
+
+        let product2_name = "Cola"
+        let product2_img = "images/cola.webp"
+        let product2_img_alt = "cola"
+        let product2_price_amount = 25
+        let product2_price_currency = "MDL"
+
+        item1_h2.innerHTML = product1_name
+        item1_img.src = product1_img
+        item1_img.alt = product1_img_alt
+        item1_p.innerHTML = product1_price_amount + product1_price_currency
+
+        item2_h2.innerHTML = product2_name
+        item2_img.src = product2_img
+        item2_img.alt = product2_img_alt
+        item2_p.innerHTML = product2_price_amount + product2_price_currency
+    </script>
+</body>
+</html>
