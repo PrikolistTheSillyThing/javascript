@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLIDING CAROUSEL</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+
+    <div class="carousel">
+
+        <div id="slider" class="slider">
+            <img src="https://fastly.picsum.photos/id/101/600/400.jpg?hmac=llLoR1bOz8D526iiSDyuQqaBly_c4YPlxkbsGbYQxkI" alt="">
+            <img src="https://fastly.picsum.photos/id/121/600/400.jpg?hmac=1hmyJk-tQ5YjM6OKQfuM1FlbrDslqNhdJx8rBf6Uyjs" alt="">
+            <img src="https://fastly.picsum.photos/id/835/600/400.jpg?hmac=HR6Bi8aji8auDURA6j9xiZC6QgcFwwBTMJ8X4Cf6bPg" alt="">
+        </div>
+
+        <div class="controls">
+            <button 
+                onclick="
+
+                     slideNumber--
+
+                    if (slideNumber < 0) {
+                        slideNumber = 2
+                    }
+
+                    slider.style.transform = 'translateX(-'+slideNumber*600+'px)'
+                "
+            >&lt;</button>
+            <button
+                onclick="
+
+                    slideNumber++
+
+                    if (slideNumber > 2) {
+                        slideNumber = 0
+                    }
+
+                    slider.style.transform = 'translateX(-'+slideNumber*600+'px)'
+                "
+            >&gt;</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+
+</body>
+</html>
