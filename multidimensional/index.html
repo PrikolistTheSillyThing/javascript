@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<table id="matrixTable">
+</table>
+
+<script>
+    let matrix = [
+        [-1, 2, 1],
+        [1, -2, 1],
+        [-1, -2, -1],
+    ]
+
+
+    matrixTable.innerHTML = ""
+
+    for (let i = 0; i < 3; i++) {
+        matrixTable.innerHTML += '<tr>'
+
+        for (let j = 0; j < 3; j++) {
+            matrixTable.innerHTML += '<td>' + matrix[i][j] + '</td>'
+        }
+
+        matrixTable.innerHTML += '</tr>'
+    }
+
+</script>
+
+</body>
+</html>
