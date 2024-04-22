@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAROUSEL RANDOM SQUARE</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+        #carousel {
+            width: 500px;
+            height: 500px;
+            border: 2px solid white;
+        }
+        #carousel div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            box-sizing: border-box;
+
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+    </div>
+    <button onclick="prevSlide()">PREV</button>
+    <button onclick="nextSlide()">NEXT</button>
+
+    <script>
+
+        let slide = 1;
+
+        function renderSlide() {
+
+            carousel.innerHTML= ``
+
+            for (let r=0; r<5; r++) { 
+
+                for (let c=0; c<5; c++) {
+                    carousel.innerHTML += `
+                        <div id="sq-${r}-${c}" style="
+                            background-image: url(images/${slide}.jpg);
+                            background-position: ${c * -100}px ${r * -100}px;
+                            transform:
+                                translateX(${-300 + Math.random() * 600}px)
+                                translateY(${-300 + Math.random() * 600}px)
+                                rotate(${Math.random() * 360}deg)
+                            ;
+                            opacity: 0;
+                        "></div>
+                    `
+                }
+
+            }
+
+            setTimeout (function() {
+                for (let r=0; r<5; r++) {
+                    for (let c=0; c<5; c++) {
+                        window[`sq-${r}-${c}`].style.transform = "translateX(0) translateY(0) rotate(0)"
+                        window[`sq-${r}-${c}`].style.opacity = "1";
+                    }
+                }
+
+               
+            }, 1000)
+
+        }
+        function prevSlide () {
+            slide--
+            if (slide<=0) {
+                slide=3
+                renderSlide()
+            } else {
+                renderSlide()
+            }
+        }
+        function nextSlide () {
+            slide++
+            if (slide>=4) {
+                slide=1
+                renderSlide()
+            } else {
+                renderSlide()
+            }
+        }
+        renderSlide()
+    </script>
+
+</body>
+</html>
