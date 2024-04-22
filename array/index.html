@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #graph {
+            width: 720px;
+            height: 500px;
+            border: 1px solid black;
+            display: flex;
+            align-items: end;
+        }
+        #graph .bar {
+            background-color: cyan;
+            width: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="graph"></div>
+
+    <script>
+        let salary = [
+            3000,  // 0
+            3000,
+            3000,
+            4500,
+            4500,
+            4700,
+            4700,
+            4700,
+            4700,
+            6000,
+            6000,
+            6000
+        ]
+
+        for (let i = 11; i > -1; i-- ) {
+            graph.innerHTML += `
+                <div class="bar"
+                    style="height: ${salary[i]/20}px">
+                </div
+            `
+        }
+
+        
+    </script>
+</body>
+</html>
