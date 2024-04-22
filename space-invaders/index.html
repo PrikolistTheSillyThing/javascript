@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="game.css">
+    <title>Space Invaders JS</title>
+</head>
+<body onkeydown="control(event)">
+    
+    <div id="map">
+        <div class="invaders">
+            <div class="green"></div>
+        </div>
+        <div class="shuttle">
+            <div class="bullet" onanimationend="bulletMiss(event)"></div>
+        </div>
+        <div class="score"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
